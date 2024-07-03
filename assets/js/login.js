@@ -27,6 +27,7 @@ async function iniciarSesion() {
       },
       body: JSON.stringify(datos),
       signal: controller.signal,
+      credentials: "include",
     });
 
     clearTimeout(timeoutId);
