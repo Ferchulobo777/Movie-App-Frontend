@@ -1,0 +1,11 @@
+.background-style-head {
+    background-color: #b5b5b5; /* Color de fondo para el encabezado u header */
+}
+
+.background-style:nth-child(odd) {
+    background-color: #f5f5f5; /* Fondo gris claro para filas impares */
+}
+
+.background-style:nth-child(even) {
+    background-color: #e0e0e0; /* Fondo gris medio para filas pares */
+}

@@ -1,0 +1,16 @@
+.bg-movie {
+  background: url("../img/bg-register.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-login-image {
+  background: url("../img/bg-login.jpg") center center;
+  background-size: 100% 100%; /* Ajusta este valor según tus necesidades */
+  background-repeat: no-repeat;
+}
+.error-message {
+  color: #dc3545; /* Color rojo para errores */
+  font-size: 0.875rem; /* Tamaño de fuente */
+  margin-top: 0.25rem; /* Espaciado superior */
+}
