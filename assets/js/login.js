@@ -5,60 +5,68 @@ $(document).ready(function () {
 
 const apiUrl = "https://movie-app-arwj.onrender.com";
 
+// Función para obtener los headers con el token de autorización
+function getHeaders() {
+  return {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + localStorage.getItem("token"),
+  };
+}
+
 async function iniciarSesion() {
   if (!validarFormulario()) {
-      return;
+    return;
   }
 
   let datos = {
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
   };
 
   try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3000);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
 
-      const response = await fetch(apiUrl + "/auth/login", {
-          method: "POST",
-          headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-          },
-          body: JSON.stringify(datos),
-          signal: controller.signal,
-      });
+    const response = await fetch(apiUrl + "/auth/login", {
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify(datos),
+      signal: controller.signal,
+    });
 
-      clearTimeout(timeoutId);
+    clearTimeout(timeoutId);
 
-      if (!response.ok) {
-          throw new Error("Network response was not ok");
-      }
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
 
-      const token = await response.text(); // Obtener el token JWT como texto
+    const token = await response.text(); // Obtener el token JWT como texto
 
-      // Guardar token y email en localStorage después del inicio de sesión exitoso
-      localStorage.setItem("token", token);
-      localStorage.setItem("email", datos.email);
-      console.log(
-          "Token guardado en localStorage:",
-          localStorage.getItem("token")
-      );
+    // Guardar token y email en localStorage después del inicio de sesión exitoso
+    localStorage.setItem("token", token);
+    localStorage.setItem("email", datos.email);
+    console.log(
+      "Token guardado en localStorage:",
+      localStorage.getItem("token")
+    );
 
-      // Redirigir al usuario a la página principal después del inicio de sesión exitoso
-      window.location.href = "/pages/home.html";
+    // Redirigir al usuario a la página principal después del inicio de sesión exitoso
+    window.location.href = "/pages/home.html";
   } catch (error) {
-      console.error("Error:", error);
-      if (error.name === "AbortError") {
-          console.error("Request timed out");
-      }
-      mostrarErrorModal("Hubo un problema al intentar iniciar sesión. Por favor, verifica tus credenciales e intenta nuevamente.");
+    console.error("Error:", error);
+    if (error.name === "AbortError") {
+      console.error("Request timed out");
+    }
+    mostrarErrorModal(
+      "Hubo un problema al intentar iniciar sesión. Por favor, verifica tus credenciales e intenta nuevamente."
+    );
   }
 }
 
 function mostrarErrorModal(mensaje) {
   document.getElementById("errorMessage").innerText = mensaje;
-  $('#errorModal').modal('show');
+  $("#errorModal").modal("show");
 }
 
 function validarFormulario() {
@@ -74,11 +82,11 @@ function validarCampo(id, nombreCampo) {
   const errorText = document.getElementById(id + "-error");
 
   if (valor === "") {
-      setErrorFor(field, errorText, `${nombreCampo} es obligatorio.`);
-      return false;
+    setErrorFor(field, errorText, `${nombreCampo} es obligatorio.`);
+    return false;
   } else {
-      setSuccessFor(field, errorText);
-      return true;
+    setSuccessFor(field, errorText);
+    return true;
   }
 }
 
@@ -98,7 +106,7 @@ function loadRememberedUser() {
   const rememberedEmail = localStorage.getItem("email");
 
   if (rememberedEmail) {
-      document.getElementById("email").value = rememberedEmail;
-      document.getElementById("customCheck").checked = true; // Marcar la casilla "Recuérdame"
+    document.getElementById("email").value = rememberedEmail;
+    document.getElementById("customCheck").checked = true; // Marcar la casilla "Recuérdame"
   }
 }

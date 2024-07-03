@@ -111,10 +111,7 @@ async function registrarUsuarios() {
   try {
     const response = await fetch(apiUrl + "/users", {
       method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+      headers: getHeaders(),
       body: JSON.stringify(datos),
     });
 
