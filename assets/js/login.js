@@ -5,15 +5,6 @@ $(document).ready(function () {
 
 const apiUrl = "https://movie-app-arwj.onrender.com";
 
-// Función para obtener los headers con el token de autorización
-function getHeaders() {
-  return {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-    Authorization: "Bearer " + localStorage.getItem("token"),
-  };
-}
-
 async function iniciarSesion() {
   if (!validarFormulario()) {
     return;
@@ -30,7 +21,10 @@ async function iniciarSesion() {
 
     const response = await fetch(apiUrl + "/auth/login", {
       method: "POST",
-      headers: getHeaders(),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(datos),
       signal: controller.signal,
     });
