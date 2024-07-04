@@ -24,6 +24,8 @@ async function iniciarSesion() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://movie-app-arwj.onrender.com",
+        "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify(datos),
       signal: controller.signal,
