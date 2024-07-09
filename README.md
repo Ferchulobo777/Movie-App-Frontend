@@ -71,7 +71,7 @@ Hassan El Hadad <br />
 Alexis Mendez <br />
 Iván Di Monte <br />
 Franco Fernandez <br />
-Lautaro Navarro
+Lautaro Navarro <br />
 
 ---
 
