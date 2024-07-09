@@ -70,7 +70,8 @@ Fernando Rodriguez <br />
 Hassan El Hadad <br />
 Alexis Mendez <br />
 Iván Di Monte <br />
-Franco Fernandez
+Franco Fernandez <br />
+Lautaro Navarro
 
 ---
 
@@ -82,6 +83,7 @@ Para cualquier pregunta o comentario, puedes contactarnos en: <br />
 <a href="mailto:aleemm19922@gmail.com" target="_blank" rel="noopener noreferrer">aleemm19922@gmail.com</a><br />
 <a href="mailto:ivansdmonte@hotmail.com" target="_blank" rel="noopener noreferrer">ivansdmonte@hotmail.com</a><br />
 <a href="mailto:franco21f@gmail.com" target="_blank" rel="noopener noreferrer">franco21f@gmail.com</a>
+<a href="mailto:lautanavarroe@gmail.com" target="_blank" rel="noopener noreferrer">lautanavarroe@gmail.com</a>
 
 ---
 
