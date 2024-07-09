@@ -66,12 +66,13 @@ Este es un proyecto entregable del programa "Codo a Codo", realizado por el equi
 
 ## Participantes
 
-Fernando Rodriguez <br />
+Fernando Rodríguez <br />
 Hassan El Hadad <br />
-Alexis Mendez <br />
+Alexis Méndez <br />
 Iván Di Monte <br />
-Franco Fernandez <br />
+Franco Fernández <br />
 Lautaro Navarro
+
 
 ---
 
