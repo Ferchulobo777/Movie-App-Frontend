@@ -35,7 +35,7 @@ Este es un proyecto entregable del programa "Codo a Codo", realizado por el equi
 
 ## Instalación
 
-1. Clona este repositorio: `git clone https://github.com/Ferchulobo777/entregablecac-movie.git`
+1. Clona este repositorio: `git clone https://github.com/Ferchulobo777/Movie-App-Frontend.git`
 2. Abre el editor de código Visual Studio Code.
 3. Descarga la extensión Live Server.
 4. Abre el archivo index.html y haz clic en el logo de la extensión abajo a tu derecha.
